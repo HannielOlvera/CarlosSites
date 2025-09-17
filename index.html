@@ -115,26 +115,24 @@
       </div>
 
       <aside class="hero-card" aria-hidden="false" style="position:relative;height:520px;border-radius:20px;overflow:visible;">
-        <div class="frame" style="position:relative;height:100%;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.26));display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(0,0,0,0.6);overflow:hidden;">
-
-          <!-- Three.js canvas for 3D background (js will initialize) -->
-          <canvas id="three-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:1"></canvas>
-
-          <!-- Decorative glows -->
-          <div class="glow-back" aria-hidden="true" style="position:absolute;inset:-30px;z-index:0;filter:blur(40px) saturate(120%);pointer-events:none;">
-            <div class="g1" style="position:absolute;width:48%;height:70%;right:-10%;top:10%;background:#4be3ff;border-radius:50%;mix-blend-mode:screen"></div>
-            <div class="g2" style="position:absolute;width:40%;height:60%;left:-10%;bottom:10%;background:#ff2d95;border-radius:50%;mix-blend-mode:screen"></div>
-          </div>
-
-          <!-- Foreground image (with light sweep overlay) -->
-          <figure class="hero-figure" role="img" aria-label="Carlitos en acción" style="position:relative;width:calc(100% - 48px);height:calc(100% - 48px);border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:2;transform-style:preserve-3d;">
-            <picture>
-              <source srcset="assets/hero-boxer.webp" type="image/webp">
-              <img src="assets/hero-boxer.jpg" alt="Carlitos boxeando" loading="lazy" width="800" height="1200" style="width:100%;height:100%;object-fit:cover;display:block;filter:contrast(110%) saturate(120%);will-change:transform;">
-            </picture>
-            <div class="light-sweep" aria-hidden="true" style="position:absolute;inset:0;z-index:3;pointer-events:none;"></div>
-          </figure>
-
+        <div class="frame" style="position:relative;height:100%;border-radius:20px;background:var(--panel);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px rgba(0,0,0,0.6);overflow:hidden;">
+          <img src="assets/images/hero-carlitos.jpg" alt="Carlitos - Hero" style="width:100%;height:100%;object-fit:cover;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+        </div>
+        <div class="hero-reserva" style="margin-top:24px;padding:24px;background:var(--panel);border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.2);max-width:420px;margin-left:auto;margin-right:auto;">
+          <h3 style="color:var(--neon-1);margin-bottom:12px;text-align:center;">Reserva tu plan de entrenamiento</h3>
+          <form id="reserva-form" action="#" method="post" style="display:flex;flex-direction:column;gap:14px;">
+            <input type="text" name="nombre" placeholder="Tu nombre" required style="padding:12px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--white);">
+            <input type="email" name="email" placeholder="Correo electrónico" required style="padding:12px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--white);">
+            <select name="plan" required style="padding:12px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--white);">
+              <option value="">Selecciona tu objetivo</option>
+              <option value="fit">Fitness general</option>
+              <option value="box">Boxeo profesional</option>
+              <option value="perder-peso">Perder peso</option>
+              <option value="ganar-musculo">Ganar músculo</option>
+            </select>
+            <textarea name="mensaje" rows="3" placeholder="¿Tienes alguna meta o comentario?" style="padding:12px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--white);"></textarea>
+            <button type="submit" class="btn btn-primary" style="padding:12px 18px;border-radius:12px;font-weight:800;border:0;cursor:pointer;background:var(--accent-grad);color:#06121b;box-shadow:0 8px 30px rgba(75,227,255,0.06);">Reservar ahora</button>
+          </form>
         </div>
       </aside>
     </section>
