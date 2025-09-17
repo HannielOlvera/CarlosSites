@@ -6,6 +6,11 @@
     <title>Carlitos | Boxeador y TikToker</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -25,15 +30,18 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Carlitos</h1>
-            <p class="tagline">Boxeador Profesional | Influencer | Entrenador</p>
-            <div class="hero-buttons">
+            <h1 class="hero-title" data-aos="fade-right">Carlitos</h1>
+            <p class="tagline" data-aos="fade-right" data-aos-delay="200">Boxeador Profesional | Influencer | Entrenador</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
                 <a href="#contacto" class="btn primary">Contactar</a>
                 <a href="#sobre-mi" class="btn secondary">Conoce más</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="assets/images/hero-carlitos.jpg" alt="Carlitos Boxeador">
+        <div class="hero-image" data-aos="zoom-in">
+            <div class="hero-image-wrapper">
+                <img src="assets/images/hero-carlitos.jpg" alt="Carlitos Boxeador">
+            </div>
+            <div class="hero-particles" id="hero-particles"></div>
         </div>
     </section>
 
