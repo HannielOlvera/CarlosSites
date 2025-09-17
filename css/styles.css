@@ -51,7 +51,7 @@ button{font:inherit}
 .brand{display:flex;gap:12px;align-items:center;font-weight:800;color:var(--neon-1);text-decoration:none}
 .logo-dot{width:10px;height:10px;border-radius:50%;background:var(--neon-2);box-shadow:0 0 18px var(--neon-2)}
 .brand-name{font-weight:800;letter-spacing:-0.2px}
-.nav-toggle{background:transparent;border:0;color:var(--white);font-size:18px;padding:8px;border-radius:10px;cursor:pointer;display:none;align-items:center;justify-content:center}
+.nav-toggle{background:transparent;border:0;color:var(--white);font-size:18px;padding:8px;border-radius:10px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1300;box-shadow:0 2px 12px rgba(75,227,255,0.08);transition:background .18s}
 .nav-links{list-style:none;display:flex;gap:12px;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;transition:var(--transition);font-size:15px}
 .nav-links a:hover{color:var(--white);transform:translateY(-3px)}
@@ -245,12 +245,15 @@ button[disabled]{opacity:0.6;cursor:not-allowed}
   }
   .nav-toggle{
     display: inline-flex;
+    visibility: visible;
+    background:rgba(15,18,32,0.92);
+    border:1px solid var(--glass);
   }
   .nav-links{
-    display: none;
+    display: none !important;
   }
   .nav-links.nav-open{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -260,6 +263,7 @@ button[disabled]{opacity:0.6;cursor:not-allowed}
     padding: 20px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
+    z-index:1200;
   }
   .grid{
     grid-template-columns: repeat(2,1fr);
