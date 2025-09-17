@@ -168,11 +168,27 @@
       </div>
 
       <form id="contact-form" class="contact-form" action="#" method="post" aria-label="Formulario de contacto">
+        <p style="color:var(--muted);text-align:center;margin-bottom:10px;font-size:15px;">¡Únete a cientos de clientes satisfechos que han transformado su vida con Carlitos! Personaliza tu plan y recibe asesoría profesional.</p>
         <div class="form-row">
           <input type="text" name="name" placeholder="Tu nombre" required>
           <input type="email" name="email" placeholder="Correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Teléfono" required>
         </div>
-        <textarea name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+        <div class="form-row">
+          <input type="number" name="edad" placeholder="Edad" min="10" max="99" required>
+          <input type="number" name="altura" placeholder="Altura (cm)" min="100" max="250" required>
+          <input type="number" name="peso" placeholder="Peso (kg)" min="30" max="250" required>
+        </div>
+        <select name="meta" required style="margin-bottom:10px;padding:12px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--white);">
+          <option value="">¿Cuál es tu meta principal?</option>
+          <option value="perder-peso">Perder peso</option>
+          <option value="ganar-musculo">Ganar músculo</option>
+          <option value="fit">Fitness general</option>
+          <option value="box">Boxeo profesional</option>
+          <option value="salud">Mejorar salud</option>
+          <option value="otro">Otro</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Describe tus metas, dudas o comentarios" required></textarea>
         <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
           <button class="btn btn-primary" type="submit">Enviar mensaje</button>
           <small class="muted">También puedes escribir por Instagram/TikTok</small>
