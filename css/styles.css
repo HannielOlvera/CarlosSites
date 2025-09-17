@@ -62,8 +62,24 @@ button{font:inherit}
 .no-scroll{overflow:hidden}
 
 /* ---------------- HERO ---------------- */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 520px;align-items:center;padding:110px 0 80px;gap:40px}
-.hero-left{padding-right:18px}
+.hero{
+  min-height:100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 110px 0 80px;
+}
+.hero-left{
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 520px;
+  padding-right: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .eyebrow{display:inline-block;font-weight:700;padding:6px 10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:999px;color:var(--muted);font-size:13px}
 .hero-title{font-size:48px;margin:18px 0 8px;line-height:1;letter-spacing:-1px;color:transparent;background-clip:text;-webkit-background-clip:text;background-image:var(--accent-grad);-webkit-text-fill-color:transparent;text-shadow:0 10px 30px rgba(0,0,0,0.6)}
 .hero-sub{color:var(--muted);font-size:18px;max-width:640px}
@@ -81,8 +97,43 @@ button{font:inherit}
 .badge{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--muted);font-size:13px}
 
 /* hero card */
-.hero-card{position:relative;height:520px;border-radius:20px;overflow:visible}
-.frame{position:relative;height:100%;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.26));display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);overflow:hidden}
+.hero-card{
+  position: relative;
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 520px;
+  height: auto;
+  border-radius: 20px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.frame{
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  max-height: 520px;
+  border-radius: 20px;
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.hero-reserva{
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  max-width: 420px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 #three-canvas, #particles{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .hero-figure{position:relative;width:calc(100% - 48px);height:calc(100% - 48px);border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;z-index:2;transform-style:preserve-3d;will-change:transform}
 .hero-figure img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(110%) saturate(120%);will-change:transform}
@@ -155,25 +206,33 @@ button[disabled]{opacity:0.6;cursor:not-allowed}
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width:1100px){
   .hero{
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    padding: 120px 10px 60px;
+    gap: 32px;
+    min-height: auto;
+  }
+  .hero-left, .hero-card{
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .frame{
+    min-height: 220px;
+    max-height: 340px;
+  }
+  .hero-reserva{
+    max-width: 100%;
+    padding: 18px;
+  }
+  .hero-title, .hero-sub{
     text-align: center;
-    padding: 120px 20px 60px;
   }
-  .hero-content {
-    order: 2;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .hero-image {
-    order: 1;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero-buttons {
+  .hero-buttons{
     justify-content: center;
+    flex-wrap: wrap;
   }
-  .badges {
+  .badges{
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -212,6 +271,8 @@ button[disabled]{opacity:0.6;cursor:not-allowed}
   .about-card {
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    margin: 0 auto;
   }
   .stat-row {
     justify-content: center;
@@ -221,10 +282,26 @@ button[disabled]{opacity:0.6;cursor:not-allowed}
 
 @media (max-width:480px){
   .hero-title{
-    font-size: 32px;
+    font-size: 28px;
+    text-align: center;
   }
   .hero-sub {
-    font-size: 16px;
+    font-size: 15px;
+    text-align: center;
+  }
+  .hero-left, .hero-card{
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .frame{
+    min-height: 120px;
+    max-height: 220px;
+  }
+  .hero-reserva{
+    max-width: 100%;
+    padding: 12px;
   }
   .grid{
     grid-template-columns: 1fr;
